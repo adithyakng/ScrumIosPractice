@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MeetingView: View {
+    @Environment(\.colorScheme) var colorScheme;
     var body: some View {
         VStack {
             ProgressView(value: 10, total: 40)
@@ -35,7 +36,7 @@ struct MeetingView: View {
                 Spacer()
                 Button(action: ({})){
                     Image(systemName: "forward.fill")
-                        .foregroundColor(.black)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                 }
             }
             .accessibilityLabel("Next Speaker")
